@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+
+<html>
+<title>Ramki</title>
+<head>
+</head>
+<frameset cols="20%,*,10%">
+<frame name="r1" src="figury.html">
+<frame name="r2" src="figury.html">
+<frame name="r3" src="figury.html">
+
+</frameset>
+
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+<body>
+
+<img src="figury.png"usemap="#test">
+
+<map name="test">
+<area shape="circle" coords ="14,3,1" href="www.onet.pl">
+<area shape="rect" coords="6,7,17,11" href="www.onet.pl">
+<area shape="poly" coords="1,6,1,13,6,13" href="www.onet.pl">
+</map>
+
+
+
+</body>
+</head>
+</html>
