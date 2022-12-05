@@ -1,0 +1,40 @@
+body{
+    background-color: rgb(165, 165, 165);
+    background-image: url(obrazy/kwadrat.png);
+    /* background-repeat: no-repeat;  - NIE POWTARZAĆ OBRAZU*/
+    background-attachment: fixed;
+}
+
+p{
+    color:rgba(248, 193, 223, 0.923);
+    background-color: rgba(34, 2, 47, 0.732);
+    font-family: 'Times New Roman';
+    font-size: 50px;
+    font-style: italic;
+    font-weight: 500;
+    font-variant: normal;   /*mall-caps*/   
+    text-decoration:overline;
+    text-align:left;
+    text-indent: 50px; /*akapit*/
+}
+
+h1{
+    text-shadow: -3px -4px 8px rgb(127, 66, 109); /* góra dół rozmazanie*/
+}
+
+img{
+    /* border-color:black;
+    border-style: solid; */
+    border: 5px dashed;
+    border-radius: 25%;
+    border-color: red blue yellow green orangered;
+}
+
+/* 
+fonst.google.com - czcionki (@import)
+    font-weight: 800;
+skrót: 
+    font: text-transform: 'Times New Roman' 50px italic 500 normal;
+
+F12
+*/
