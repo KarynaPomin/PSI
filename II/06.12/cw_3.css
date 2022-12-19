@@ -1,0 +1,46 @@
+img{
+    width: 200px;
+
+}
+
+.article_list{
+    display: flex; /* Swobodne kontenery*/
+    gap: 15px; /*przerwa pomiędzy*/
+    /*flex-direction: column; polozenie w kolumne*/
+}
+
+.item{
+    border: 5px solid black;
+    text-align: center;
+    width: 300px;
+    padding: 15px; /*Ramka wilkosc*/
+}
+
+.item:hover{
+    background-color: rgb(255, 0, 144); /* st.szary obszar z kurs */
+    cursor: pointer;
+    box-shadow: 8px 10px 20px rgb(56, 5, 25);
+}
+
+.item2{
+    border: 5px solid black;
+    text-align: center;
+    width: 300px;
+    padding: 15px; /*Ramka wilkosc*/
+}
+
+.item2:hover{
+    background-color: rgb(118, 5, 163);
+    cursor: grab;
+    box-shadow: 8px 10px 20px rgb(46, 2, 39);
+}
+
+.btn_container{
+    display: flex;
+justify-content: flex-end;
+}
+
+.article_list{
+    @media {max-width:750px} 
+    flex-direction: column;
+}
