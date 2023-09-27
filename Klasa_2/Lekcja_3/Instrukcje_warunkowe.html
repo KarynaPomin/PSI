@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="chareCodeAt.js"></script>
+</head>
+    <script language="javascript">
+    let name = prompt("Podaj imię: ", "");
+    if (name == "Karyna"){
+        alert("Witaj boss!");
+    }
+    else{
+        alert("Nie znam ciebie.")
+    }
+
+    let login = prompt("Podaj login:", "");
+    let password = prompt("Podaj hasło: ", "");
+    if (login == "admin" && password == "123"){
+        document.write("<body bgcolor='#532338' <h1>UKRYTA STRONA</h1></body>");
+    }
+    else{
+        alert("Zły login lub hasło");
+    }
+    // UNICODE - charCodeAt( )
+</script>
+<body>
+    <a href="javascript:szyfrowanie()">Kliknij tu</a>
+</body>
+</body>
+</html>
