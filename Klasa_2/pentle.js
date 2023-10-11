@@ -41,3 +41,16 @@ document.write(a);
 
 // }
 // while()
+
+// Policz do potęgi
+
+let podstawa_potegi = prompt("Podaj podstawę potęgi: ", "");
+let wykladnik_potega = prompt("Podaj wykładnik potęgi: ", "");
+let wynik = 1;
+
+for(i = 0; i <= wykladnik_potega; i++)
+{
+    wynik *= podstawa_potegi;
+}
+
+alert("Wynik wynosi: " + wynik);
