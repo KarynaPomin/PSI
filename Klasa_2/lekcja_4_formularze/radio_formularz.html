@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Wybierz</legend>
+        <input type="radio" value="A" name="radio"> A
+        <input type="radio" value="B" name="radio" checked> B
+        <input type="radio" value="C" name="radio"> C
+        <br>
+        <input type="button" value="Wyślij" onclick="formularz2()">
+    </fieldset>
+
+    <script>
+        function formularz2(){
+            let f = document.getElementsByName('radio');
+            let v;
+            for(var i = 0; i < f.length; i++)
+            {
+                if(f[i].checked){
+                    v = f[i].value;
+                }
+            }
+            alert(v);
+        }
+    </script>
+</body>
+</html>
