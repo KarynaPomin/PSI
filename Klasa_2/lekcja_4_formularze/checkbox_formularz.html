@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Wybierz</legend>
+        <input type="checkbox" value="kos" name="ptaki"/> kos <br>
+        <input type="checkbox" value="gil" name="ptaki"/> gil <br>
+        <input type="checkbox" value="paw" name="ptaki"/> paw <br>
+        <input type="checkbox" value="emu" name="ptaki"/> emu <br>
+        <br>
+        <input type="button" value="wyślij" onclick="formularz3()">
+    </fieldset>
+    <script>
+        function formularz3(){
+            let f = document.getElementsByName('ptaki');
+            let v = '';
+            for(var i = 0; i < f.length; i++){
+                if(f[i].checked){
+                    v = v + '\n' + f[i].value;
+                }
+            }
+            if (v == ''){v = "Nie dokonałeś żadnego wyboru."}
+            alert(v);
+        }
+    </script>
+</body>
+</html>
