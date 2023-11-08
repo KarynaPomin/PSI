@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Wybierz ssaki: </legend>
+        <select id="ssaki">
+            <option value="kot">kot</option>
+            <option value="jeż">jeż</option>
+            <option value="ryś">ryś</option>
+            <option value="koń">koń</option>
+        </select>
+        <br>
+        <input type="button" value="wyślij" onclick="formularz4()">
+    </fieldset>
+
+    <script>
+        function formularz4(){
+            var s = document.getElementById("ssaki");
+            alert("Value przechowuje wartość: " + s.value);
+            alert("SelectedIndex zwraca wartość: " + s.selectedIndex);
+            alert("Length zwraca wartość: " + s.length);
+        }
+    </script>
+</body>
+</html>
