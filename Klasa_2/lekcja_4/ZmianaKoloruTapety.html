@@ -32,13 +32,16 @@
         </div>
 
         <div id="right-box" class="right-box">
-
+            <p id="lol"></p>
         </div>
 
 
     <script>
         function ColorChange(){
-            document.getElementById("right-box").style.backgroundColor = document.getElementById("kolor").value;     
+            // Zmiana tła
+            document.getElementById("right-box").style.backgroundColor = document.getElementById("kolor").value;   
+            // Zmiana koloru tekstu
+            document.getElementById('lol').innerHTML = document.getElementById("right-box").style.color = document.getElementById("kolor").value;  
         }
     </script>
 </body>
