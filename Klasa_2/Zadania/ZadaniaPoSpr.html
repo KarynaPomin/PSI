@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: rgb(228, 73, 119);
+        }
+
+        input{
+            background-color: rgb(213, 148, 205);
+        }
+    
+        input button{
+            background-color: rgb(242, 21, 106);
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <div class="container0">
+        <legend>Podaj napis: </legend>
+            <input type="text" id="word" value="Ala ma kota">
+
+        <legend>Podaj liczbę: </legend>
+            <input type="text" id="number" value="5">
+
+        <legend>Wybierz opcje do wukonania:</legend>
+        <select id="selectQuest">
+                <option value="WygenerujTabelke">Wygeneruj tabelę</option>
+                <option value="JakiZnak">Który to znak?</option>
+                <option value="PierwszaCzyZlozona">Pierwsza czy złożona?</option>
+                <option value="LosoweLiczby">Losowe liczby</option>
+            </select>
+            <br>
+            <input type="button" value="Wyslij" onclick="Click()">
+    </div>
+</body>
+
+    <script>
+        function Click(){
+            var selectOption = document.getElementById("selectQuest").value;
+            const userWords = document.getElementById("word").value;
+            var userNumber = document.getElementById("number").value;
+
+            if (selectOption == "JakiZnak")
+                JakiZnak(userNumber, userWords);
+            if (selectOption == "PierwszaCzyZlozona")
+                PierwszaCzyZlozona(userNumber);
+            if (selectOption == "LosoweLiczby")
+                LosoweLiczby(userNumber);
+            if (selectOption == "WygenerujTabelke")
+                WygenerujTabelke(userNumber);
+        }
+
+        function JakiZnak(Uindex, Utext){
+            alert(Utext.charAt(Uindex));
+        }
+        
+        function PierwszaCzyZlozona(number){
+            var flaga = true;
+            for(i = 2; i <= number / 2; i++){
+                if (number % i != 0){
+                    flaga = false;
+                    break;
+                }
+            }
+            if (flaga == true)
+                alert("Liczba jest złożona!");  
+            else
+                alert("Liczba jast pierwsza!");
+        }
+
+        function LosoweLiczby(n){
+            while(n > 0){
+                alert(parseInt(Math.random() * 49));
+                n--;
+            }            
+        }
+
+        function WygenerujTabelke(n){
+            var i = 0;            
+            document.write('<table style="border: solid 3px; width: 50px;">');
+            document.write('<th>Liczba</th>');
+            do{
+                document.write('<tr style="border: solid 3px;"><td style="border: solid 3px;">' + i + '</td></tr>');
+                i++;
+            }while(i < n)
+            document.write('</table>');
+            
+        }
+    </script>
+</html>
