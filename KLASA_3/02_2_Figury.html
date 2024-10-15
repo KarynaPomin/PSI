@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function ChangeColor(){
+            var userColor = document.getElementById("idColor").value;
+
+            document.getElementById("c").setAttribute("fill", userColor);
+            document.getElementById("r").setAttribute("fill", userColor);
+            document.getElementById("p").setAttribute("fill", userColor);
+        }
+
+        function ChangeFigure(){
+            var userFigure = document.getElementById("idFigure").value;
+
+            document.getElementById("c").style.display = "none";
+            document.getElementById("r").style.display = "none";
+            document.getElementById("p").style.display = "none";
+            document.getElementById("error").innerHTML= "";
+
+            if(userFigure == "koło"){
+                document.getElementById("c").style.display = "block";
+            }
+            else if(userFigure == "kwadrat"){
+                document.getElementById("r").style.display = "block";
+            }
+            else if(userFigure == "trójkąt"){
+                document.getElementById("p").style.display = "block";
+            }
+            else{
+                document.getElementById("error").innerHTML= "Błąd :(";
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background: #41436a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .mein-box {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background-color: #984063;
+            padding: 20px;
+            border: solid 3px #f64668;
+            border-radius: 10px;
+        }
+
+        .svg-box {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 5px;
+        }
+
+        .textbox {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .textbox div {
+            margin-bottom: 10px;
+        }
+
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        input {
+            border: solid 2px;
+            background: #ff91a7;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+    </style>
+
+    <div class="mein-box">
+        <div class="svg-box">
+            <svg>
+                <circle id="c" cx="75" cy="75" r="45" fill="#fe9677">
+            </svg>
+
+            <svg>
+                <rect id="r" x="50" y="50" fill="#fe9677" width="75" height="75" style="display: none;">
+            </svg>
+
+            <svg>
+                <polygon id="p" points="75,10 130,130 20,130" fill="#fe9677" style="display: none;">
+            </svg>
+
+            <div id="error"></div>
+        </div>
+        <div class="textbox">
+            <div class="userColor-textbox">
+                Podaj kolor:
+                <input type="text" id="idColor">
+                <input type="button" value="Zmień kolor" onclick="ChangeColor()">
+            </div>
+            
+            <div class="userFigure-textbox">
+                Podaj figurę:
+                <input type="text" id="idFigure">
+                <input type="button" value="Zmień figurę" onclick="ChangeFigure()">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
