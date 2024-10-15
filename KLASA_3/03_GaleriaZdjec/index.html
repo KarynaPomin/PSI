@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria zdjęć</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+            background: #a7ace0;
+            font-family:Verdana;
+        }
+
+        img {
+            border: 7px rgb(50, 48, 155) double;
+            border-radius: 5%;
+            width: 400px;
+            height: 200px;
+            transition: opacity 0.3s;
+        }
+
+        img:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+ 
+        #container{
+            margin-top: 200px;
+        }
+
+        button{
+            width: 100px;
+            height: 40px;
+            border: rgb(50, 48, 155) 2px solid;
+            border-radius: 5%;
+            background: #b9b4e4;
+            font-size: 16px;
+        }
+
+        button:hover {
+            opacity: 0.5;
+            cursor: pointer;
+            font-size: 17px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Galeria</h2>
+        <div id="photos"><img id="photo" src="./galeria/0.jpg"></div>
+        <button type="button" id="previous">Poprzednie</button>
+        <button type="button" id="next">Następne</button>
+    </div>
+    
+    <script>
+        let id = 0;
+        const numberOfPhotos = 3;
+        let big = false;
+
+        document.getElementById("next").addEventListener("click", displayNextPhoto);
+        document.getElementById("previous").addEventListener("click", displayPreviousPhoto);
+        document.getElementById("photo").addEventListener("click", bigPhoto);
+
+        function displayNextPhoto() {
+            if (id < numberOfPhotos - 1) {
+                id++;
+            } else {
+                id = 0;
+            }
+            updatePhoto();
+        }
+
+        function displayPreviousPhoto() {
+            if (id > 0) {
+                id--;
+            } else {
+                id = numberOfPhotos - 1;
+            }
+            updatePhoto();
+        }
+
+        function updatePhoto() {
+            const photoElement = document.getElementById("photo");
+            photoElement.src = "./galeria/" + id + ".jpg";
+            photoElement.style.width = big ? "800px" : "400px";
+            photoElement.style.height = big ? "400px" : "200px";
+        }
+
+        function bigPhoto() {
+            big = !big;
+            updatePhoto();
+        }
+    </script>
+</body>
+</html>
