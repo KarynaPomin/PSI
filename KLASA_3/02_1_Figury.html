@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figury</title>
+</head>
+<body>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #c1bed6;
+        }
+
+        .text-container{
+            text-align: left;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .svg-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+        }
+
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+<script>
+    function color() {
+        var kolor = document.getElementById("click").value;  
+        document.getElementById("c").setAttribute("fill", kolor);  
+        document.getElementById("k").setAttribute("fill", kolor);  
+        document.getElementById("t").setAttribute("fill", kolor);  
+    }
+
+    function figure() {
+        var f = document.getElementById("figury").value;  
+
+        document.getElementById("c").style.display = "none";
+        document.getElementById("k").style.display = "none";
+        document.getElementById("t").style.display = "none";
+
+        if (f == "kolo") {
+            document.getElementById("c").style.display = "block";  
+        } else if (f == "kwadrat") {
+            document.getElementById("k").style.display = "block";   
+        } else if (f == "trojkat") {
+            document.getElementById("t").style.display = "block";  
+        }
+    }
+</script>
+
+<div class="container">
+    <div class="svg-container">
+        <svg width="151px" height="151px">
+            <circle id="c" cx="75" cy="75" r="45" fill="#4900a8" /> 
+        </svg>
+        
+        <svg width="151px" height="151px">
+            <rect id="k" x="50" y="50" width="73" height="73" fill="#921421" style="display:none;" /> 
+        </svg>
+        
+        <svg width="151px" height="151px">
+            <polygon id="t" points="75,10 130,130 20,130" fill="#7b7894" style="display:none;" />
+        </svg>
+    </div>  
+</div>
+
+<br>
+<div class="text-container">
+    <div class="text_1">
+        Podaj kolor: 
+        <input type="text" id="click">
+        <input type="button" value="Zmień kolor" onclick="color()"><br><br>
+    </div>
+    
+    <div class="text_2">
+        Wybierz figurę:
+        <select id="figury">
+            <option value="kolo">Koło</option>
+            <option value="kwadrat">Kwadrat</option>
+            <option value="trojkat">Trójkąt</option>
+        </select>
+        <input type="button" value="Wybierz figurę" onclick="figure()">
+    </div>
+</div>
+
+</body>
+
+</html>
