@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG</title>
+    <link href="myStyle.css" rel="stylesheet">
+    <script src="myScript.js"></script>
+</head>
+<body>
+  <script>
+    function ViewFigure(){
+      var figureType = document.getElementById("figureSelect").value;
+      var width = document.getElementById("widthFigure").value;
+      var height = document.getElementById("heightFigure").value;
+      var fill = document.getElementById("colorFigure").value;
+      var svg = document.getElementById("viewBox");
+  
+      if (figureType == "poligon"){
+          CreatePolygon(svg, width, height, fill);
+      }
+      else if (figureType == "circle"){
+          CreateCircle(svg, width, fill);
+      }
+      else if (figureType == "rectangle"){
+          CreateRectangle(svg, width, height, fill);
+      }
+      else{
+          svg.innerHTML = '';
+      }
+    }
+
+    function CreatePolygon(svg, width, height, fill){
+        var points = `${width / 2},0 ${width},${height} 0,${height}`;
+        var shape = `<polygon points="${points}" fill="${fill}" />`;
+        svg.innerHTML = shape;
+    }
+    
+    function CreateCircle(svg, width, fill){
+        var radius = width / 2;
+        var shape = `<circle cx="${radius}" cy="${radius}" r="${radius}" fill="${fill}" />`;
+        svg.innerHTML = shape;
+    }
+    
+    function CreateRectangle(svg, width, height, fill) {
+        var shape = `<rect width="${width}" height="${height}" fill="${fill}" />`;
+        svg.innerHTML = shape;
+    }
+  </script>
+
+  <style>
+    #viewBox{
+      border: solid 1px black;
+      padding: 10px;
+      margin: 10px;
+    }
+    
+    #container{
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Wyśrodkowanie w pionie */
+        height: 100vh;
+    }
+    
+    form{
+        display: flex;
+        flex-direction: column;
+    }
+  </style>
+  
+    <div id="container">
+        <svg id="viewBox" width="150px" height="150px"></svg>
+
+        <div id="form">
+            <form>
+                <label for="chooseFigere">Figura</label>
+                <select id="figureSelect">
+                    <option value="poligon">Trójkąt</option>
+                    <option value="circle">Koło</option>
+                    <option value="rectangle">Kwadrat</option>
+                </select><br>
+                <label for="widthFigure">Szerokość:</label><input type="number" id="widthFigure"><br>
+                <label for="heightFigure">Wysokość:</label><input type="number" id="heightFigure"><br>
+                <label for="colorFigure">Kolor:</label><input type="color" id="colorFigure"><br>
+                <input type="button" id="viewFigure" onclick="ViewFigure()" value="Wyświetl figurę">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
