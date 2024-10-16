@@ -1,0 +1,125 @@
+jQuery
+
+1. Funkcje manipulacji DOM
+   • text() – Pobiera lub ustawia tekst wewnątrz elementu:
+        $("#element").text(); // Pobiera tekst
+        $("#element").text("Nowy tekst!"); // Ustawia tekst
+
+   • html() – Pobiera lub ustawia kod HTML wewnątrz elementu:
+        $("#element").html(); // Pobiera HTML
+        $("#element").html("<strong>Nowy HTML!</strong>"); // Ustawia HTML
+
+   • val() – Pobiera lub ustawia wartość w polach formularza (np. input, textarea):
+        $("#inputField").val(); // Pobiera wartość inputa
+        $("#inputField").val("Nowa wartość!"); // Ustawia wartość
+
+   • attr() – Pobiera lub ustawia atrybut elementu:
+        $("#link").attr("href"); // Pobiera wartość atrybutu href
+        $("#link").attr("href", "https://nowy-adres.com"); // Ustawia nowy href
+
+   • addClass() i removeClass() – Dodaje lub usuwa klasy CSS:
+        $("#element").addClass("highlight"); // Dodaje klasę "highlight"
+        $("#element").removeClass("highlight"); // Usuwa klasę "highlight"
+
+   • toggleClass() – Przełącza klasę (jeśli jest, usuwa, jeśli nie ma, dodaje):
+        $("#element").toggleClass("active"); // Przełącza klasę "active"
+
+   • append() i prepend() – Dodaje zawartość na końcu lub na początku elementu:
+        $("#list").append("<li>Nowy element</li>"); // Dodaje na końcu
+        $("#list").prepend("<li>Pierwszy element</li>"); // Dodaje na początku
+  
+   • remove() – Usuwa element z DOM:
+        $("#element").remove(); // Usuwa element o ID "element"
+
+
+2. Funkcje obsługi zdarzeń
+
+   • click() – Reaguje na kliknięcia:
+
+        $("#button").click(function() {
+            alert("Przycisk kliknięty!");
+        });
+
+   • on() – Ogólna funkcja do obsługi dowolnych zdarzeń:
+        $("#element").on("mouseover", function() {
+            alert("Najechano myszką na element!");
+        });
+
+   • hover() – Obsługuje najechanie i zjechanie myszki z elementu:
+        $("#element").hover(
+            function() { $(this).addClass("hovered"); }, // Najechanie
+            function() { $(this).removeClass("hovered"); } // Zjechanie
+        );
+
+   • submit() – Obsługuje wysyłanie formularzy:
+        $("form").submit(function(event) {
+            event.preventDefault(); // Zapobiega wysłaniu formularza
+            alert("Formularz wysłany!");
+        });
+
+   • focus() i blur() – Reagują na ustawienie lub utratę fokusu w polach formularzy:
+        $("#inputField").focus(function() {
+            $(this).css("background-color", "yellow");
+        }).blur(function() {
+            $(this).css("background-color", "");
+        });
+
+
+3. Funkcje animacji
+   • hide() i show() – Ukrywa lub pokazuje elementy (można dodać czas trwania):
+        $("#element").hide(500); // Ukrywa element w 0.5 sekundy
+        $("#element").show(500); // Pokazuje element w 0.5 sekundy
+
+   • toggle() – Przełącza widoczność (jeśli jest widoczny, ukrywa, i odwrotnie):
+        $("#element").toggle(1000); // Przełącza widoczność z animacją 1 sekundy
+
+   • fadeIn() i fadeOut() – Płynnie pokazuje lub ukrywa elementy z efektem zanikania:
+        $("#element").fadeIn(1000); // Płynnie pokazuje w 1 sekundę
+        $("#element").fadeOut(1000); // Płynnie ukrywa w 1 sekundę
+
+   • slideDown() i slideUp() – Rozwija lub zwija elementy z efektem przesuwania:
+        $("#element").slideDown(500); // Rozwija element w 0.5 sekundy
+        $("#element").slideUp(500); // Zwija element w 0.5 sekundy
+
+
+4. Funkcje AJAX
+   • load() – Ładuje dane z serwera i wstawia je do wybranego elementu:
+        $("#content").load("plik.html"); // Ładuje zawartość pliku HTML do elementu
+
+   • $.get() i $.post() – Wysyła żądanie GET lub POST do serwera:
+        $.get("data.txt", function(response) {
+            $("#result").html(response);
+        });
+
+      $.post("submit.php", {name: "Jan", age: 30}, function(response) {
+          $("#result").html(response);
+      });
+
+   • $.ajax() – Bardziej zaawansowana funkcja AJAX do pełnej kontroli nad żądaniami:
+        $.ajax({
+            url: "submit.php",
+            type: "POST",
+            data: {name: "Jan", age: 30},
+            success: function(response) {
+                $("#result").html(response);
+            },
+            error: function() {
+                alert("Błąd podczas wysyłania żądania!");
+            }
+        });
+
+
+5. Funkcje pomocnicze
+   • each() – Iteruje po wybranych elementach i wykonuje funkcję na każdym z nich:
+        $("li").each(function(index) {
+            $(this).text("Element nr " + (index + 1));
+        });
+
+   • css() – Ustawia lub pobiera wartości styli CSS:
+        $("#element").css("color", "red"); // Ustawia kolor tekstu na czerwony
+        var kolor = $("#element").css("color"); // Pobiera aktualny kolor tekstu
+
+
+Podsumowanie:
+jQuery upraszcza wiele zadań, które w czystym JavaScript mogą wymagać więcej kodu. 
+Z jego pomocą możesz łatwo manipulować DOM, obsługiwać zdarzenia, tworzyć animacje czy korzystać z AJAX.
