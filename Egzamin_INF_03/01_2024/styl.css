@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #EEEEEE;
+    font-family: Helvetica, sans-serif;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: LightBlue;
+    padding: 10px 0;
+}
+
+.logo {
+    width: 50%;
+}
+
+.menu {
+    width: 50%;
+    text-align: right;
+}
+
+.menu a {
+    font-size: 150%;
+    color: Navy;
+    font-weight: bold;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    border: 1px solid Navy;
+}
+
+.banner {
+    background-color: #DDDDDD;
+    height: 200px;
+    text-align: left;
+}
+
+main {
+    color: Navy;
+    margin: 50px;
+    height: 400px;
+}
+
+footer {
+    text-align: right;
+    background-color: LightBlue;
+    padding: 10px;
+}
+
+input[type="button"], input[type="reset"] {
+    background-color: LightBlue;
+    color: Navy;
+}
+
+input[type="checkbox"]:checked{
+    accent-color: navy;
+}
