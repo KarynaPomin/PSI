@@ -1,0 +1,94 @@
+body
+{
+	margin: 0;
+	background-color: rgb(240, 248, 255);
+	color: rgb(87, 87, 87);
+    font-family: "Marck Script", cursive;
+    font-size: 28px;
+}
+
+a:link    { color: rgb(87, 87, 87); text-decoration: none; }
+a:visited { color: rgb(87, 87, 87); }
+a:active  { color: rgb(87, 87, 87); }
+a:hover   { color: rgb(255, 182, 193); }
+
+h1
+{
+	font-size: 64px;
+	color: rgb(204, 153, 255);
+	font-weight: 400;
+	text-align: center;
+	letter-spacing: 5px;
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+
+p
+{
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 25px;
+	letter-spacing: 2px;
+}
+
+.board
+{
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.cardA
+{
+	width: 125px;
+	height: 125px;
+	display: inline-block;
+	margin: 3px;
+	background-image: url("images/karta.png");
+	border: 4px solid rgb(255, 229, 204);
+	border-radius: 4px;
+	cursor: default;
+	filter: brightness(100%);
+	transition: all .3s ease-in-out;
+}
+
+.card
+{
+	width: 125px;
+	height: 125px;
+	display: inline-block;
+	margin: 3px;
+	background-image: url("images/karta.png");
+	border: 4px solid rgb(255, 182, 193);
+	border-radius: 4px;
+	cursor: pointer;
+	filter: brightness(70%);
+	transition: all .3s ease-in-out;
+}
+
+.card:hover
+{
+	border: 4px solid rgb(255, 182, 193);
+	filter: brightness(100%);
+}
+
+.score
+{
+	margin-top: 5px;
+	letter-spacing: 2px;
+}
+
+#restart {
+    padding: 10px 20px;
+    background-color: rgb(204, 153, 255);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#restart:hover {
+    background-color: rgb(255, 182, 193);
+}
